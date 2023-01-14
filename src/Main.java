@@ -84,7 +84,12 @@ public class Main {
                 if ((a < 1 || a > 10) || (b < 1 || b > 10)) {
                     throw new Exception();
                 }
-                result = RomanNumeral.arabicToRoman(Integer.parseInt(arithmeticOperations(a, b, action)));
+                
+                int temp = Integer.parseInt(arithmeticOperations(a, b, action));
+                if(temp < 0){
+                    throw new Exception();
+                }
+                result = RomanNumeral.arabicToRoman(temp);
             }
             catch (Exception e){
                 throw new Exception();
